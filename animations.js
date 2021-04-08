@@ -11,14 +11,15 @@ const sizes = document.querySelector('.sizes');
 
 // moving animation
 container.addEventListener('mousemove', e => {
-	let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+	let xAxis = (window.innerWidth / 2 - e.pageX) / -25;
 	let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
 	card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`
+	card.style.transition = 'all 0.05s ease';
 });
 
 // animate in
 container.addEventListener('mouseenter', e => {
-	card.style.transition = 'none';
+	card.style.transition = 'all 0.5s ease';
 
 	// popout
 	title.style.transform = `translateZ(150px)`;
